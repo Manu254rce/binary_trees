@@ -1,7 +1,7 @@
 # Makefile for the binary trees task
 
 CC = gcc
-SRC = main.c binary_tree_print.c 0-binary_tree_node.c 
+SRC = main.c binary_tree_print.c 1-binary_tree_insert_left.c 0-binary_tree_node.c 
 NAME = binary_trees
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89 -Wunused-variable
