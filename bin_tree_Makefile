@@ -4,13 +4,16 @@ CC = gcc
 SRC = $(wildcard *.c) 
 NAME = binary_trees
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89 -Wunused-variable
+CFLAGS = -ggdb -Wall -Werror -Wextra -pedantic -std=gnu89 -Wunused-variable
 
 all:
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 lint:
 	betty $(SRC)
+
+valgrind:
+	valgrind -s --leak-check=full --show-leak-kinds=all ./$(NAME)
 
 clean:
 	$(RM) *~ *.*~ .*.*~ .*.*.un~ $(NAME) 
